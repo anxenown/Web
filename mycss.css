@@ -28,3 +28,11 @@ footer{
     text-align: center;
     position: relative;
 }
+.heading{
+    background-color: black;
+    color: aliceblue;
+}
+#subhead{
+    background-color: rgb(123, 0, 111);
+    color: yellow;
+}
