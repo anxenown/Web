@@ -23,6 +23,13 @@ span{
     border-radius: 5px;
 }
 
+body{
+    
+    background-repeat: no-repeat ;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 footer{
     bottom: 0;
     text-align: center;
