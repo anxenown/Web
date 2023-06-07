@@ -28,6 +28,8 @@ body{
     background-repeat: no-repeat ;
     background-attachment: fixed;
     background-size: cover;
+    opacity: 0.8;
+   
 }
 
 footer{
@@ -42,6 +44,23 @@ footer{
 #subhead{
     background-color: rgb(123, 0, 111);
     color: yellow;
+}
+
+.card{
+    background-color: rgba(82, 37, 37, 0);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+    transition: 0.1s;
+    width: 40%;
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(233, 247, 164, 0.694);
+}
+
+.container {
+    padding: 2px 18px;
+  
 }
 
 @media screen and (min-width: 600px) {
