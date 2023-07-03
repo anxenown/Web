@@ -12,3 +12,12 @@
     justify-content: center;
     align-items: center;
 }
+#board{
+    background: linear-gradient(rgb(149, 228, 149), rgb(235, 235, 157));
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
