@@ -21,3 +21,13 @@
     grid-template-columns: repeat(18, 1fr);
     grid-template-rows: repeat(18, 1fr);
 }
+.head{
+    background-color: red;
+}
+.snakebody{
+    background-color: green;
+
+}
+.food{
+    background-color: blueviolet;
+}
