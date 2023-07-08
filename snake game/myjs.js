@@ -1,4 +1,4 @@
-//game constants and variables
+//Game constants and variables
 let inputDir = {x:0, y:0};
 const foodSound = new Audio('eating.mp3');
 const gameOverSound = new Audio('gameo.mp3');
@@ -11,7 +11,7 @@ let snakeArr = [
 ]
 let food = {x: 6 , y:7}
 
-//game funtions
+//Game funtions
 function main(ctime){
     window.requestAnimationFrame(main);
     //console.log(ctime)
@@ -23,12 +23,12 @@ function main(ctime){
 
 }
 function gameEngine(){
-    //Part 1: upgrading the Snake array and Food
+    //Part 1: Upgrading the Snake array and Food
 
 
-    // Part 2: display/render the Snake and Food
+    // Part 2: Display/Render the Snake and Food
 
-    // display/render the Snake
+    // Display/Render the Snake
 
     board.innerHTML="";
     snakeArr.forEach((e, index)=>{
@@ -44,7 +44,7 @@ function gameEngine(){
         board.appendChild(snakeElement);
     })
 
-    // display/render the Food
+    // Display/Render the Food
 
     foodElement = document.createElement("xyz");
     foodElement.style.gridRowStart = food.y;
@@ -55,7 +55,7 @@ function gameEngine(){
 }
 
 
-//main logic
+//Main logic
 window.requestAnimationFrame(main);
 window.addEventListener("keydown" , e=>{
     inputDir = {x :0 , y: 1} //start the game
