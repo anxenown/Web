@@ -28,7 +28,7 @@ function gameEngine(){
 
     // Part 2: Display/Render the Snake and Food
 
-    // Display/Render the Snake
+    // Display/Render our Snake
 
     board.innerHTML="";
     snakeArr.forEach((e, index)=>{
