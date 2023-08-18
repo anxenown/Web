@@ -5,7 +5,7 @@ def time():
     cdate = strftime('%D:%B:%Y')           #digital clock function
     label_time.config(text= ctime)
     label_date.config(text= cdate)
-    label_time.after(1000,time)
+    label_time.after(1000,time)    # function calling after 1 sec
 root = tk.Tk()                             #ui
 root.title('Digital Clock')                #title
 label_time= tk.Label(root, font= ('calibri', 20, 'bold'), background= 'black', foreground= 'white')
