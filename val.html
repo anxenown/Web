@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Be My Valentine 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(120deg,#ff4d6d,#ff758f,#ffb3c6,#ffd6e0);
+  background-size:300% 300%;
+  animation:bgMove 8s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.card{
+  width:92%;
+  max-width:420px;
+  padding:30px 22px;
+  border-radius:22px;
+  text-align:center;
+  background:rgba(255,255,255,0.28);
+  backdrop-filter:blur(18px);
+  box-shadow:0 25px 50px rgba(0,0,0,0.35);
+}
+
+h1{
+  font-size:clamp(22px,5vw,32px);
+  margin-bottom:35px;
+}
+
+.buttons{
+  position:relative;
+  height:150px;
+}
+
+button{
+  padding:14px 32px;
+  font-size:clamp(16px,4vw,19px);
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s;
+}
+
+#yes{
+  background:#ff0055;
+  color:#fff;
+  box-shadow:0 12px 25px rgba(255,0,85,0.45);
+}
+
+#yes:active{
+  transform:scale(0.95);
+}
+
+#no{
+  position:absolute;
+  background:#222;
+  color:#fff;
+  left:50%;
+  top:80px;
+  transform:translateX(-50%);
+}
+
+/* Floating hearts */
+.heart{
+  position:absolute;
+  bottom:-20px;
+  color:#ff0055;
+  animation:floatUp 6s linear forwards;
+  opacity:.9;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0) scale(1);opacity:1}
+  100%{transform:translateY(-120vh) scale(1.6);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Will you be my Valentine? 💘</h1>
+
+  <div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😢</button>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const noBtn = document.getElementById("no");
+const box = document.querySelector(".buttons");
+const music = document.getElementById("bgMusic");
+
+/* NO button bhaagta rahega */
+function escapeNo(){
+  const maxX = box.clientWidth - noBtn.offsetWidth;
+  const maxY = box.clientHeight - noBtn.offsetHeight;
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top  = Math.random() * maxY + "px";
+}
+
+noBtn.addEventListener("mouseover", escapeNo);
+noBtn.addEventListener("touchstart", escapeNo);
+
+/* YES CLICK FLOW */
+document.getElementById("yes").onclick = () => {
+
+  // music start
+  music.play();
+
+  // page pe message show
+  document.body.innerHTML = `
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div style="
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff0055,#ff9a9e,#ffc3d8);
+    background-size:300% 300%;
+    animation:bgMove 6s ease infinite;
+    color:white;
+    text-align:center;
+    font-family:Segoe UI;
+    padding:24px;
+  ">
+    <h1 style="font-size:clamp(34px,7vw,56px)">
+      Yesss 💖🥰
+    </h1>
+
+    <p style="
+      font-size:clamp(18px,4vw,26px);
+      line-height:1.6;
+      max-width:600px;
+      margin-top:18px;
+    ">
+      You just made my heart smile ❤️<br>
+      I promise, I’ll make you feel special every single day ✨<br><br>
+      <small style="opacity:.85">
+        Redirecting to WhatsApp…
+      </small>
+    </p>
+  </div>
+
+  <style>
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+  </style>
+  `;
+
+  // WhatsApp redirect after 3 sec
+  const phone = "918953883431"; // 🔴 apna number daalo
+  const message = encodeURIComponent(
+    "Hey ❤️ I said YES 😳💖 You’re officially my Valentine 🥰"
+  );
+
+  setTimeout(() => {
+    window.location.href = `https://wa.me/${phone}?text=${message}`;
+  }, 3000);
+};
+
+/* Floating hearts */
+setInterval(()=>{
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = 16 + Math.random()*28 + "px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},350);
+</script>
+
+</body>
+</html>
